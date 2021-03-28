@@ -18,7 +18,7 @@ public class UserAccessCheck {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     //What kind of method calls I would intercept?
     //execution(* PACKAGE.*.*(..))
-    @Before("execution(* com.game.spring.springaop.data.*.*(..))") //point cuts
+    @Before("com.game.spring.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()") //point cuts
     public void before(JoinPoint joinPoint) {  //joinpoint - specific execution instance. ex: dao1.retrieveData() - 1 joinpoint/method
         //this block is called advise - What should I do? - complete logic is advise
         //What to do? - Advise
